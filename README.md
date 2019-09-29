@@ -1,4 +1,4 @@
-# outdoorgearguide
+# Outdoor Gear Guide
 You first stop for the best outdoor gear reviews. You can use our platform to search for top gear, get articles, and comment on these to save notes for planning your next big trip.
 
 
