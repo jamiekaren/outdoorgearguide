@@ -19,7 +19,7 @@ module.exports = function (app) {
 
             //then we gotta grab the right areas of our website
 
-            $("article").each(function (i, element) {
+            $("article.inline").each(function (i, element) {
 
                 // save to an empty result object
                 var result = {};
@@ -33,6 +33,12 @@ module.exports = function (app) {
                 result.link = $(this)
                     .children("a")
                     .attr("href");
+
+                result.image = $(this)
+                    .children("a")
+                    .children('div')
+                    .children('img')
+                    .attr("src");
 
                 console.log(result);
 

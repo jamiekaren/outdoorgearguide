@@ -12,9 +12,12 @@ const PostSchema = new Schema({
         type: String,
         require: true
     },
+    image: {
+        image: String,
+    },
     link: {
         type: String,
-        requied: true
+        require: true
     },
 
     // "comment" is an object that stores a Comment id
