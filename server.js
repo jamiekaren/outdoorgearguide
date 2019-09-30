@@ -3,11 +3,6 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 
 
-//scraping tools
-//axios is promised-bsed library
-const axios = require("axios");
-const cheerio = require("cheerio");
-
 //require all models
 const db = require("./models");
 
