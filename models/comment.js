@@ -1,4 +1,4 @@
-const moongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 
 // Save a reference to the Schem constructor

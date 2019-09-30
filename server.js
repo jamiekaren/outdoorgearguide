@@ -1,6 +1,6 @@
 const express = require("express");
-const logger = require("morgan");
 const mongoose = require("mongoose");
+const logger = require("morgan");
 
 
 //scraping tools
@@ -28,10 +28,15 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 
 //Routes
-require("./routes/html-routes")(app);
 require("./routes/api-routes")(app);
+require("./routes/html-routes.js")(app);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 mongoose.connect(MONGODB_URI);
+
+// Start the server
+app.listen(PORT, function() {
+    console.log("App running on port " + PORT + "!");
+  });

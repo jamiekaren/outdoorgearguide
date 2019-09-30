@@ -1,6 +1,6 @@
 const path = require("path");
 
-module.exports = (app) => {
+module.exports = function (app) {
 
 
     app.get('*', (req, res) => {

@@ -1,8 +1,8 @@
-const moongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 
 // save a reference to Schema constructor
-const Schema = moongoose.Schema;
+const Schema = mongoose.Schema;
 
 //using Schema constructor, create a new postSchema object
 
@@ -27,7 +27,7 @@ const PostSchema = new Schema({
 });
 
 // this created our model from the above schema, using mongoose's model method
-const Post = moongoose.model("Post", PostSchema);
+const Post = mongoose.model("Post", PostSchema);
 
 // export the Post model
 module.exports = Post;
