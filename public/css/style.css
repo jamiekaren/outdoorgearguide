@@ -16,4 +16,5 @@ background-image: url(../assets/october_roadtrip_arches01.JPG)
 #firstbox {
     border: 10px;
     border-color: black;
+    background-image: url(../assets/october_roadtrip_arches01.JPG)!important;
 }
