@@ -26,7 +26,9 @@ module.exports = function (app) {
 
                 result.title = $(this)
                     .children("a")
-                    .attr("href");
+                    .children('div')
+                    .children('img')
+                    .attr("alt");
 
                 result.link = $(this)
                     .children("a")
@@ -34,28 +36,21 @@ module.exports = function (app) {
 
                 console.log(result);
 
-                //now let's make a new post in our database
-                db.Posts.create(result).then(function (dbPost) {
-                    console.log(dbPost);
-                })
-                    .catch((err) => {
-                        console.log(err);
-                    });
-                res.send("Scrape Complete");
+                //     //now let's make a new post in our database
+                //     db.Post.create(result).then(function (dbPost) {
+                //         console.log(dbPost);
+                //     })
+                //         .catch((err) => {
+                //             console.log(err);
+                //         });
+                //     res.send("Scrape Complete");
+                // });
+
+
             });
-
-
-
-
         });
+
+
     });
-
-
-
-
-
-
-
-
 
 };
