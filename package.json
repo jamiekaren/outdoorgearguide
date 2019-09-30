@@ -1,0 +1,26 @@
+{
+  "name": "outdoorgearguide",
+  "version": "1.0.0",
+  "description": "You first stop for the best outdoor gear reviews. You can use our platform to search for top gear, get articles, and comment on these to save notes for planning your next big trip.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiekaren/outdoorgearguide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamiekaren/outdoorgearguide/issues"
+  },
+  "homepage": "https://github.com/jamiekaren/outdoorgearguide#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1"
+  }
+}
