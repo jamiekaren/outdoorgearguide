@@ -19,15 +19,16 @@ app.use(express.json());
 //make static public folder
 app.use(express.static("public"));
 
-//connect to Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+// // //connect to Mongo DB
+// mongoose.connect("mongodb://localhost/outdoorGear", { useNewUrlParser: true });
+
 
 //Routes
 require("./routes/api-routes")(app);
 require("./routes/html-routes.js")(app);
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+// // If deployed, use the deployed database. Otherwise use the local outdoorGearDb database
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/outdoorGearDb";
 
 mongoose.connect(MONGODB_URI);
 
