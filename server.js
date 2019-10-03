@@ -16,17 +16,17 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // // //connect to Mongo DB
-mongoose.connect("mongodb://localhost/outdoorGear", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/outdoorGear", { useNewUrlParser: true });
 
 
 //Routes
 require("./routes/api-routes")(app);
 require("./routes/html-routes.js")(app);
 
-// // // If deployed, use the deployed database. Otherwise use the local outdoorGearDb database
-// const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/outdoorGearDb";
+// // If deployed, use the deployed database. Otherwise use the local outdoorGearDb database
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/outdoorGearDb";
 
-// mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI);
 
 // Start the server
 app.listen(PORT, function() {

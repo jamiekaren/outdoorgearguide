@@ -8,11 +8,11 @@ const cheerio = require("cheerio");
 module.exports = function (app) {
 
     //route to scrape our website for adata
-    app.get("/scrape", function (req, res) {
+    app.get("/scrape", (req, res) => {
 
         //we use axios to grab the body of the html
         axios.get("https://www.outdoorgearlab.com/camping-and-hiking").then((response) => {
-       
+
             //then we load that into cherio to create a shorthand selector
             var $ = cheerio.load(response.data);
 
@@ -28,13 +28,13 @@ module.exports = function (app) {
                     .children('img')
                     .attr("alt");
 
-                    result.image = $(this)
+                result.image = $(this)
                     .children("a")
                     .children('div')
                     .children('img')
                     .attr("src");
 
-                    result.link = $(this)
+                result.link = $(this)
                     .children("a")
                     .attr("href");
 
@@ -51,7 +51,29 @@ module.exports = function (app) {
                     });
             });
 
-            res.send("Scrape Complete");
+
+            console.log("--------------- Scrape Complete ---------------");
         });
     });
+
+
+    // route for getting all the posts saved in the db
+    app.get("/scraped", function (req, res) {
+
+        //grab all the posts in our Post collection
+        db.Post.find({})
+            .then(function (dbPost) {
+
+                // if we are sucessful, sned them back to the client
+                res.json(dbPost)
+
+                console.log("Getting posts...");
+                console.log(dbPost);
+
+            })
+            .catch(function (err) {
+                throw err;
+            });
+    });
+
 };
