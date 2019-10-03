@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 // save a reference to Schema constructor
 const Schema = mongoose.Schema;
 
@@ -12,9 +11,16 @@ const PostSchema = new Schema({
         type: String,
         require: true
     },
+    image: {
+        image: String,
+    },
     link: {
         type: String,
-        requied: true
+        require: true
+    },
+    saved: {
+        type: Boolean,
+        default: false
     },
 
     // "comment" is an object that stores a Comment id
