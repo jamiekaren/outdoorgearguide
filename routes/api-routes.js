@@ -63,12 +63,11 @@ module.exports = function (app) {
         //grab all the posts in our Post collection
         db.Post.find({})
             .then(function (dbPost) {
-                
+
+                console.log("Getting posts...");
+                console.log(dbPost);
                 // if we are sucessful, sned them back to the client
                 res.json(dbPost);
-                
-                // console.log("Getting posts..." );
-                // console.log(dbPost);
 
             })
             .catch(function (err) {

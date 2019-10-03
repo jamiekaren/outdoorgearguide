@@ -5,17 +5,18 @@ console.log("app.js file working! ");
 $.get("/api/scraped", function (data) {
 
     let outdoorPosts = data;
+    console.log(data);
 
-    for (let i = 0; i < outdoorPosts.length; i++) {
+    // for (let i = 0; i < outdoorPosts.length; i++) {
 
-        $("#posts-div").append("<p data-id='" + outdoorPosts[i]._id + "'" >
-            + "<h2>" + outdoorPosts[i].title + "</h2>");
+    //     $("#posts-div").append("<p data-id='" + outdoorPosts[i]._id + "'" >
+    //         + "<h2>" + outdoorPosts[i].title + "</h2>");
             
             
             
-            // + "<br />" + outdoorPosts[i].link + <br />
-            // + "<img src= " + "'" + outdoorPosts[i].image + "'" + ">");
-    }
+    //         // + "<br />" + outdoorPosts[i].link + <br />
+    //         // + "<img src= " + "'" + outdoorPosts[i].image + "'" + ">");
+    // }
 
 });
 
