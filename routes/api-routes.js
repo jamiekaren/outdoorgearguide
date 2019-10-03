@@ -1,4 +1,5 @@
 const db = require("../models");
+
 //scraping tools
 //axios is promised-bsed library
 const axios = require("axios");
