@@ -2,13 +2,19 @@ console.log("app.js file working! ");
 
 
 // grab the articles as a JSON
-$.getJSON("/scraped", function (data) {
+$.get("/dbPosts", function (data) {
 
-    console.log(data);
+    for (let i = 0; i < data.length; i++) {
 
-
+        $("#posts-div").append("<p data-id='" + data[i]._id + "'" >
+            + data[i].title + "<br />" + data[i].link + <br />
+            + "<img src= " + "'" + data[i].image + "'" + ">");
+    }
 
 });
+
+
+
 
 
 
