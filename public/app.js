@@ -5,23 +5,25 @@ console.log("app.js file working! ");
 $.get("/api/scraped", function (data) {
 
     let outdoorPosts = data;
-    console.log(data);
+    console.log(outdoorPosts);
 
-    // for (let i = 0; i < outdoorPosts.length; i++) {
+    for (let i = 0; i < outdoorPosts.length; i++) {
+        let newDiv = $("<div>");
+        newDiv.append(data.title);
 
-    //     $("#posts-div").append("<p data-id='" + outdoorPosts[i]._id + "'" >
-    //         + "<h2>" + outdoorPosts[i].title + "</h2>");
-            
-            
-            
-    //         // + "<br />" + outdoorPosts[i].link + <br />
-    //         // + "<img src= " + "'" + outdoorPosts[i].image + "'" + ">");
-    // }
+        $("#posts-div").append(newDiv);
+
+    };
 
 });
 
 
+function makeCards(data) {
+    console.log(data);
 
+
+
+};
 
 
 

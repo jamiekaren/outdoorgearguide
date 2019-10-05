@@ -6,15 +6,30 @@ h1 {
     font-family: 'Permanent Marker' , cursive !important;
 }
 
+/* 
+html {
 
-body {
+background: url(../assets/camp-4363073.svg) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
 
-background-image: url(../assets/october_roadtrip_arches01.JPG)
 
-}
 
-#firstbox {
-    border: 10px;
-    border-color: black;
-    background-image: url(../assets/october_roadtrip_arches01.JPG)!important;
-}
+} */
+
+body { 
+    background: url(../assets/camp-4363073.svg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+ #nav-links {
+     margin: 20px;
+     background-color: white;
+ }
+
+ #first-box {
+     background-color: aliceblue;
+ }
