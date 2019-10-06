@@ -1,22 +1,16 @@
 console.log("app.js file working! ");
 
-
-// grab the articles as a JSON
+// grab the articles
 $.get("/api/scraped", function (data) {
 
     let outdoorPosts = data;
     console.log(outdoorPosts);
 
     for (let i = 0; i < outdoorPosts.length; i++) {
-
-        console.log(outdoorPosts[i]);
-
+        // console.log(outdoorPosts[i]);
         makeCards(outdoorPosts[i]);
 
-      
-
     };
-
 });
 
 
@@ -36,7 +30,7 @@ function makeCards(data) {
     // newCard.append(thisImage);
     newCard.append('<div class="card-body">');
     newCard.append(thisTitle);
-    newCard.append('<a href="" class="btn btn-warning">'
+    newCard.append('<a href="" class="btn btn-warning">' + "https://www.outdoorgearlab.com"
         + "Save Post" + '</a>' + '</div>' + '</div>');
 
     $("#posts-div").append(newCard);
