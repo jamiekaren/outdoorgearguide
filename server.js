@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
-const PORT = 3000;
+const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+const HOST = process.env.HOST || '0.0.0.0'
 
 //start up express
 const app = express();
@@ -26,6 +27,6 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/outdoorGearD
 mongoose.connect(MONGODB_URI);
 
 // Start the server
-app.listen(PORT, function() {
-    console.log("App running on port " + PORT + "!");
-  });
+app.listen(PORT, HOST, function() {
+  console.log("App running on port " + PORT + "!");
+}); 
