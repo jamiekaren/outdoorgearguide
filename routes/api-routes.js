@@ -58,21 +58,15 @@ module.exports = function (app) {
 
 
     // route for getting all the posts saved in the db
-    app.get("/scraped", function (req, res) {
-
+    app.get("/api/scraped", function (req, res) {
         //grab all the posts in our Post collection
         db.Post.find({})
             .then(function (dbPost) {
-
                 // if we are sucessful, sned them back to the client
-                res.json(dbPost)
-
-                console.log("Getting posts...");
-                console.log(dbPost);
-
+                res.send(dbPost);
             })
             .catch(function (err) {
-                throw err;
+                console.log(err);
             });
     });
 

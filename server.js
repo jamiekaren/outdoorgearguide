@@ -15,9 +15,6 @@ app.use(express.json());
 //make static public folder
 app.use(express.static("public"));
 
-// // //connect to Mongo DB
-// mongoose.connect("mongodb://localhost/outdoorGear", { useNewUrlParser: true });
-
 
 //Routes
 require("./routes/api-routes")(app);
