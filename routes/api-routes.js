@@ -63,7 +63,7 @@ module.exports = function (app) {
         db.Post.find({})
             .then(function (dbPost) {
                 // if we are sucessful, sned them back to the client
-                res.json(dbPost);
+                res.send(dbPost);
             })
             .catch(function (err) {
                 console.log(err);

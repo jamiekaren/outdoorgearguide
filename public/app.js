@@ -8,10 +8,12 @@ $.get("/api/scraped", function (data) {
     console.log(outdoorPosts);
 
     for (let i = 0; i < outdoorPosts.length; i++) {
-        let newDiv = $("<div>");
-        newDiv.append(data.title);
 
-        $("#posts-div").append(newDiv);
+        console.log(outdoorPosts[i]);
+
+        makeCards(outdoorPosts[i]);
+
+      
 
     };
 
@@ -19,9 +21,26 @@ $.get("/api/scraped", function (data) {
 
 
 function makeCards(data) {
-    console.log(data);
 
+    // let thisImage = $('<img src="');
+    // thisImage.append(data.image);
+    // thisImage.append('">');
 
+    let thisTitle = $('<h5 class="card-title">' + '<a href="');
+    thisTitle.append(data.link);
+    thisTitle.append('">')
+    thisTitle.append(data.title);
+    thisTitle.append('</a>');
+    thisTitle.append('</h5>');
+
+    let newCard = $('<div class="card" style="width: 18rem;">');
+    // newCard.append(thisImage);
+    newCard.append('<div class="card-body">');
+    newCard.append(thisTitle);
+    newCard.append('<a href="" class="btn btn-primary">'
+        + "Save Post" + '</a>' + '</div>' + '</div>');
+
+    $("#posts-div").append(newCard);
 
 };
 
