@@ -72,18 +72,18 @@ module.exports = function (app) {
 
 
     //Route to get articles by ID when a user saves them
-    app.get("/saved/:id", (req, res) => {
+    // app.get("/saved/:id", (req, res) => {
 
-        db.Post.findOne({ _id: req.params.id })
-            .then((dbPost) => {
-                res.json(dbPost);
-            })
-            .catch((err) => {
-                res.json(err);
-            });
+    //     db.Post.findOne({ _id: req.params.id })
+    //         .then((dbPost) => {
+    //             res.json(dbPost);
+    //         })
+    //         .catch((err) => {
+    //             res.json(err);
+    //         });
 
 
-    });
+    // });
 
 
 

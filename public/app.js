@@ -26,7 +26,7 @@ function makeCards(data) {
     thisTitle.append('</h5>');
     thisTitle.append('</a>');
 
-    let newCard = $('<div class="card" style="width: 18rem;" + "data-id="' + data.id + ' >');
+    let newCard = $('<div class="card" style="width: 18rem;" + "data-id="' + data._id + ' >');
     // newCard.append(thisImage);
     newCard.append('<div class="card-body">');
     newCard.append(thisTitle);
@@ -38,25 +38,25 @@ function makeCards(data) {
 };
 
 //When a user clicks on the save button for a post
-$(document).on("click", "#save-post", () => {
-    //We get the ID for that post
-    const thisId = $(this).attr("data-id");
+// $(document).on("click", "#save-post", () => {
+//     //We get the ID for that post
+//     const thisId = $(this).attr("data-id");
 
-    $.ajax({
-        method: "POST",
-        url: "/saved/" + thisId,
-        data: {
-            title: $("#card-title").val(),
-            link: $("#card-link")
-        }
-    })
-        .then((data) => {
-            console.log(data);
+//     $.ajax({
+//         method: "POST",
+//         url: "/saved/" + thisId,
+//         data: {
+//             title: $("#card-title").val(),
+//             link: $("#card-link")
+//         }
+//     })
+//         .then((data) => {
+//             console.log(data);
 
-        });
+//         });
 
 
-});
+// });
 
 
 
