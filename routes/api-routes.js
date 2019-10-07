@@ -71,20 +71,38 @@ module.exports = function (app) {
     });
 
 
-    //Route to get articles by ID when a user saves them
-    // app.get("/saved/:id", (req, res) => {
+    // Route to get articles by ID when a user saves them
+    app.get("/api/save/:id", (req, res) => {
 
-    //     db.Post.findOne({ _id: req.params.id })
-    //         .then((dbPost) => {
-    //             res.json(dbPost);
-    //         })
-    //         .catch((err) => {
-    //             res.json(err);
-    //         });
+        db.Post.findByIdAndUpdate({
+            _id: req.params.id,
+            saved: true
+        })
+            .then((dbPost) => {
+                res.json(dbPost)
+            })
+            .catch((err) => {
+                res.json(err);
+            });
 
 
-    // });
+    });
 
+    app.get("/api/saved", (req,res) => {
+
+        db.Post.find({
+            where: {
+                saved: true
+            }
+        })
+            .then((savedPost) => {
+                res.json(savedPost);
+
+            })
+            .catch((err) => {
+                res.json(err);
+            });
+    });
 
 
 };

@@ -30,33 +30,46 @@ function makeCards(data) {
     // newCard.append(thisImage);
     newCard.append('<div class="card-body">');
     newCard.append(thisTitle);
-    newCard.append('<a href="" class="btn btn-warning">' 
+    newCard.append('<a href="" class="btn btn-warning">'
         + "Save Post" + '</a>' + '</div>' + '</div>');
 
     $("#posts-div").append(newCard);
 
 };
 
-//When a user clicks on the save button for a post
-// $(document).on("click", "#save-post", () => {
-//     //We get the ID for that post
-//     const thisId = $(this).attr("data-id");
+// When a user clicks on the save button for a post
+$(document).on("click", "#save-post", () => {
+    //We get the ID for that post
+    const thisId = $(this).attr("data-id");
 
-//     $.ajax({
-//         method: "POST",
-//         url: "/saved/" + thisId,
-//         data: {
-//             title: $("#card-title").val(),
-//             link: $("#card-link")
-//         }
-//     })
-//         .then((data) => {
-//             console.log(data);
+    $.ajax({
+        method: "POST",
+        url: "/api/save/" + thisId,
+        data: {
+            _id: thisId
+        }
+    })
+        .then((data) => {
+            console.log(data);
 
-//         });
+        });
 
+});
 
-// });
+// When a user clicks on the clear button for a post
+$(document).on("click", "#clear-button", () => {
+  
+
+    $.ajax({
+        method: "POST",
+        url: "/api/clear/",
+    })
+        .then((data) => {
+            console.log(data);
+
+        });
+
+});
 
 
 
