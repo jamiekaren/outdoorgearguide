@@ -26,7 +26,7 @@ function makeCards(data) {
     thisTitle.append('</h5>');
     thisTitle.append('</a>');
 
-    let newCard = $('<div class="card" style="width: 18rem;" + "data-id="' + data._id + ' >');
+    let newCard = $('<div class="card" style="width: 18rem;" + "id="' + data._id + '" >');
     // newCard.append(thisImage);
     newCard.append('<div class="card-body">');
     newCard.append(thisTitle);
