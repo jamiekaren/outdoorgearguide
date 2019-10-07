@@ -20,9 +20,8 @@ function makeCards(data) {
     // thisImage.append(data.image);
     // thisImage.append('">');
 
-    let thisTitle = $('<a href="' + "https://www.outdoorgearlab.com"
-        + data.link + 'id="card-link"' + '"/>');
-    thisTitle.append('<h5 class="card-title" id="card-title">');
+    let thisTitle = $('<a href="https://www.outdoorgearlab.com' + data.link + '"' + 'target="_blank">');
+    thisTitle.append('<h5 class="card-title">');
     thisTitle.append(data.title);
     thisTitle.append('</h5>');
     thisTitle.append('</a>');
@@ -31,7 +30,8 @@ function makeCards(data) {
     // newCard.append(thisImage);
     newCard.append('<div class="card-body">');
     newCard.append(thisTitle);
-    newCard.append('<a href="" class="btn btn-warning" id="save-post">' + "Save Post" + '</a>' + '</div>' + '</div>');
+    newCard.append('<a href="" class="btn btn-warning">' 
+        + "Save Post" + '</a>' + '</div>' + '</div>');
 
     $("#posts-div").append(newCard);
 
