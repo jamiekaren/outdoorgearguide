@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Permanent+Marker&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <title>Outdoor Gear Guide</title>
 </head>
+
 <body>
-    
+
+    <div class="containergt6">
+        <div class="row  justify-content-md-center" id="nav-links">
+            <div class="col col-lg-12">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/saved">Saved Articles</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="row align-items-start" id="first-box">
+            <div class="col-lg-12">
+
+                <h1>Outdoor Gear Guide</h1>
+                <p>Get top reviews for the latest in outdoors gear from camping, hiking, and climbing.
+                </p>
+
+                <a class="btn btn-info btn-lg" href="/scrape" role="button" id="scrape-button">Homepage</a>
+                <a class="btn btn-alert btn-lg" href="/clear" role="button" id="clear-button">Clear All Saved
+                    Posts</a>
+
+            </div>
+        </div>
+
+
+        <div class="row align-items-center" id="saved-div">
+            <div class="col-lg-12" >
+               Saved area
+
+            </div>
+        </div>
+
+      
+
+    </div>
+
+    <script src="saved.js"></script>
 </body>
+
 </html>
