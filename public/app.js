@@ -26,7 +26,7 @@ function makeCards(data) {
     thisTitle.append('</h5>');
     thisTitle.append('</a>');
 
-    let newCard = $('<div class="card" style="width: 18rem;" + "id="' + data._id + '" >');
+    let newCard = $('<div class="card" style="width: 18rem;"' + 'id="' + data._id + '" >');
     // newCard.append(thisImage);
     newCard.append('<div class="card-body">');
     newCard.append(thisTitle);
@@ -40,7 +40,7 @@ function makeCards(data) {
 // When a user clicks on the save button for a post
 $(document).on("click", "#save-post", () => {
     //We get the ID for that post
-    const thisId = $(this).attr("data-id");
+    const thisId = $(this).attr;
 
     $.ajax({
         method: "POST",

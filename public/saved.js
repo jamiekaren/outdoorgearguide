@@ -1,7 +1,7 @@
 console.log("saved.js file working! ");
 
 
-$.get("/api/saved", (data) =>{
+$.get("/api/saved-posts", (data) =>{
 
     let savedPosts = data;
     console.log(savedPosts);

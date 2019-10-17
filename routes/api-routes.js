@@ -88,7 +88,7 @@ module.exports = function (app) {
 
     });
 
-    app.get("/api/saved", (req,res) => {
+    app.get("/api/saved", (req, res) => {
 
         db.Post.find({
             where: {
@@ -102,6 +102,18 @@ module.exports = function (app) {
             .catch((err) => {
                 res.json(err);
             });
+    });
+
+    app.get("/api/clear/", (req, res) => {
+
+        db.Post.remove({})
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((err) => {
+                res.json(err);
+            });
+
     });
 
 
