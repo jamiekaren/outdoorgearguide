@@ -88,13 +88,9 @@ module.exports = function (app) {
 
     });
 
-    app.get("/api/saved", (req, res) => {
+    app.get("/api/saved-posts", (req, res) => {
 
-        db.Post.find({
-            where: {
-                saved: true
-            }
-        })
+        db.Post.find({ "saved": true })
             .then((savedPost) => {
                 res.json(savedPost);
 
